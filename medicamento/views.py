@@ -1,5 +1,6 @@
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, ListView, TemplateView
+from django.http import JsonResponse
 
 from medicamento.models import EntradaMedicamento, Medicamento, SaidaMedicamento
 
@@ -74,5 +75,6 @@ class MedicamentoListView(ListView):
         "subtitulo": "Visualize todas as entradas de medicamentos registradas."
     }
 
-
+def health_check(request):
+    return JsonResponse({"status": "ok"})
 

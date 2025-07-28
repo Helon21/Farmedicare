@@ -1,6 +1,6 @@
 from django.urls import path
 
-from medicamento.views import EntradaMedicamentoCreateView, EstoqueView, MedicamentoListView, SaidaMedicamentoCreateView
+from medicamento.views import EntradaMedicamentoCreateView, EstoqueView, MedicamentoListView, SaidaMedicamentoCreateView, health_check
 
 urlpatterns = [
 
@@ -10,4 +10,6 @@ urlpatterns = [
     path('saida/', SaidaMedicamentoCreateView.as_view(), name='saida_medicamento_create'),
 
     path('lista/', MedicamentoListView.as_view(), name='medicamento_list'),
+
+    path('health/', health_check, name='health_check'),
 ]
